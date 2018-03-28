@@ -1,0 +1,275 @@
+<div class="container">
+
+    <div class="form-group row">
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateCompany()"
+             ng-if="contains(me.team.authorities, ['ROLE_COMPANY_UPDATE'])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/company.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">الشركة</span>
+                    <span ng-if="lang==='EN'">COMPANY</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateHr()"
+             ng-if="contains(me.team.authorities, [
+             'ROLE_EMPLOYEE_CREATE',
+             'ROLE_EMPLOYEE_UPDATE',
+             'ROLE_EMPLOYEE_DELETE',
+             'ROLE_VACATION_TYPE_CREATE',
+             'ROLE_VACATION_TYPE_UPDATE',
+             'ROLE_VACATION_TYPE_DELETE',
+             'ROLE_VACATION_CREATE',
+             'ROLE_VACATION_UPDATE',
+             'ROLE_VACATION_DELETE',
+             'ROLE_DEDUCTION_TYPE_CREATE',
+             'ROLE_DEDUCTION_TYPE_UPDATE',
+             'ROLE_DEDUCTION_TYPE_DELETE',
+             'ROLE_DEDUCTION_CREATE',
+             'ROLE_DEDUCTION_UPDATE',
+             'ROLE_DEDUCTION_DELETE',
+             'ROLE_SALARY_CREATE',
+             'ROLE_SALARY_UPDATE',
+             'ROLE_SALARY_DELETE'
+             ])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/employee.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">شؤون الموظفين</span>
+                    <span ng-if="lang==='EN'">PERSONNEL</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateCustomer()"
+             ng-if="contains(me.team.authorities, [
+             'ROLE_CUSTOMER_CREATE',
+             'ROLE_CUSTOMER_UPDATE',
+             'ROLE_CUSTOMER_DELETE'])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/customer.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">العملاء</span>
+                    <span ng-if="lang==='EN'">CUSTOMERS</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateSupplier()"
+             ng-if="contains(me.team.authorities, [
+               'ROLE_SUPPLIER_CREATE',
+               'ROLE_SUPPLIER_UPDATE',
+               'ROLE_SUPPLIER_DELETE'
+              ])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/supplier.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">الموردين</span>
+                    <span ng-if="lang==='EN'">SUPPLIER</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateProductCategory()"
+             ng-if="contains(me.team.authorities, [
+             'ROLE_PRODUCT_CATEGORY_CREATE',
+             'ROLE_PRODUCT_CATEGORY_UPDATE',
+             'ROLE_PRODUCT_CATEGORY_DELETE'
+             ])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/productCategory.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">التصنيفات</span>
+                    <span ng-if="lang==='EN'">Categories</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateProduct()"
+             ng-if="contains(me.team.authorities, [
+             'ROLE_PRODUCT_CREATE',
+             'ROLE_PRODUCT_UPDATE',
+             'ROLE_PRODUCT_DELETE'
+             ])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/product.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">الاصناف</span>
+                    <span ng-if="lang==='EN'">Products</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateWarehouse()"
+             ng-if="contains(me.team.authorities, [
+             'ROLE_WAREHOUSE_CREATE',
+             'ROLE_WAREHOUSE_UPDATE',
+             'ROLE_WAREHOUSE_DELETE'
+             ])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/warehouse.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">المخازن</span>
+                    <span ng-if="lang==='EN'">Warehouses</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateOrderBuy()"
+             ng-if="contains(me.team.authorities, [
+             'ROLE_ORDER_BUY_CREATE',
+             'ROLE_ORDER_BUY_UPDATE',
+             'ROLE_ORDER_BUY_DELETE'
+             ])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/order.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">طلبات الشراء</span>
+                    <span ng-if="lang==='EN'">ORDER PURCHASES</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateOrderSell()"
+             ng-if="contains(me.team.authorities, [
+             'ROLE_ORDER_SELL_CREATE',
+             'ROLE_ORDER_SELL_UPDATE',
+             'ROLE_ORDER_SELL_DELETE'
+             ])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/order.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">طلبات البيع</span>
+                    <span ng-if="lang==='EN'">ORDER SELL</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateBillBuy()"
+             ng-if="contains(me.team.authorities, [
+             'ROLE_BILL_BUY_CREATE',
+             'ROLE_BILL_BUY_UPDATE',
+             'ROLE_BILL_BUY_DELETE'
+              ])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/bill.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">فواتير الشراء</span>
+                    <span ng-if="lang==='EN'">BILL PURCHASE</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateBillSell()"
+             ng-if="contains(me.team.authorities, [
+             'ROLE_BILL_SELL_CREATE',
+             'ROLE_BILL_SELL_UPDATE',
+             'ROLE_BILL_SELL_DELETE'
+             ])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/bill.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">فواتير البيع</span>
+                    <span ng-if="lang==='EN'">BILL SELL</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateFund()"
+             ng-if="contains(me.team.authorities, ['ROLE_FUND_UPDATE'])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/cash.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">الصندوق</span>
+                    <span ng-if="lang==='EN'">Cash</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateBank()"
+             ng-if="contains(me.team.authorities, ['ROLE_BANK_UPDATE'])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/bank.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">البنك</span>
+                    <span ng-if="lang==='EN'">BANK</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateTeam()"
+             ng-if="contains(me.team.authorities, [
+             'ROLE_TEAM_CREATE',
+             'ROLE_TEAM_UPDATE',
+             'ROLE_TEAM_DELETE'
+             ])">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/team.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">الصلاحيات</span>
+                    <span ng-if="lang==='EN'">PRIVILEGES</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 parent text-center"
+             ng-click="openStateReport()">
+            <div class="card-image mdl-card" style="background-image: url('/ui/img/report.png')">
+                <div class="mdl-card__title mdl-card--expand"></div>
+            </div>
+            <div class="mdl-card__actions">
+                <a class="card-image__filename">
+                    <span ng-if="lang==='AR'">التقارير</span>
+                    <span ng-if="lang==='EN'">REPORTS</span>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

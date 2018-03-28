@@ -1,0 +1,296 @@
+<form name="form" ng-submit="submit()" novalidate="novalidate" focus-group="" focus-stack=""
+      focus-group-head="loop" focus-group-tail="loop">
+
+    <div class="modal-header mdl-color--primary mdl-navigation__link-active">
+        <a ng-class="{'pull-left' : lang==='AR', 'pull-right' : lang==='EN'}" href="" ng-click="cancel()">
+            <span class="fa fa-close fa-2x mdl-color-text--white"></span>
+        </a>
+        <h3 ng-class="{'pull-right' : lang==='AR', 'pull-left' : lang==='EN'}" class="panel-title mdl-list__item mdl-color-text--white">
+            <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon mdl-color-text--white">{{action==='create' ? 'add' : 'edit'}}</i>
+                <strong>{{title}}</strong>
+            </span>
+        </h3>
+    </div>
+
+    <div class="modal-body" id="modal-body">
+
+        <div class="form-group row">
+
+            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="form.$invalid && form.$submitted">
+                <div class="alert alert-danger" role="alert">
+                    <h5 class="mdl-color-text--white" ng-if="lang==='AR'">فضلاً اكمل الحقول المطلوبة</h5>
+                    <h5 class="mdl-color-text--white" ng-if="lang==='EN'">Please Complete Required Fields</h5>
+                </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+
+                    <div class="mdl-tabs__tab-bar">
+
+                        <a href="#panel-1-{{$index}}" class="mdl-tabs__tab col-xs-6 col-sm-6 col-md-6 col-lg-6 is-active">
+                            <span ng-if="lang==='AR'">البيانات الأساسية</span>
+                            <span ng-if="lang==='EN'">Basic Information</span>
+                        </a>
+
+                        <a href="#panel-2-{{$index}}" class="mdl-tabs__tab col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <span ng-if="lang==='AR'">بيانات الاتصال</span>
+                            <span ng-if="lang==='EN'">Contact Information</span>
+                        </a>
+
+                    </div>
+
+                    <div class="mdl-tabs__panel is-active" id="panel-1-{{$index}}">
+
+                        <div class="form-group row">
+
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for="companyName" class="control-label">
+                                    <span ng-if="lang==='AR'">اسم الشركة</span>
+                                    <span ng-if="lang==='EN'">Company Name</span>
+                                </label>
+                                <input id="companyName"
+                                       type="text"
+                                       required="required"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.companyName">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for="managerName" class="control-label">
+                                    <span ng-if="lang==='AR'">اسم المدير</span>
+                                    <span ng-if="lang==='EN'">Manager Name</span>
+                                </label>
+                                <input id="managerName"
+                                       type="text"
+                                       required="required"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.managerName">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for="agentName" class="control-label">
+                                    <span ng-if="lang==='AR'">اسم المندوب</span>
+                                    <span ng-if="lang==='EN'">Agent Name</span>
+                                </label>
+                                <input id="agentName"
+                                       type="text"
+                                       required="required"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.agentName">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <label for="customerType" class="control-label">
+                                    <span ng-if="lang==='AR'">نوع الحساب</span>
+                                    <span ng-if="lang==='EN'">Account Type</span>
+                                </label>
+                                <select id="customerType"
+                                        class="form-control"
+                                        required="required"
+                                        disable-validation-message=""
+                                        ng-model="customer.customerType">
+                                    <option ng-if="lang==='AR'" value="Individual">افراد</option>
+                                    <option ng-if="lang==='EN'" value="Individual">Individual</option>
+                                    <option ng-if="lang==='AR'" value="Business">شركات</option>
+                                    <option ng-if="lang==='EN'" value="Business">Business</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mdl-tabs__panel" id="panel-2-{{$index}}">
+
+                        <div class="form-group row">
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label for="contactName" class="control-label">
+                                    <span ng-if="lang==='AR'">اسم العميل</span>
+                                    <span ng-if="lang==='EN'">Customer Name</span>
+                                </label>
+                                <input id="contactName"
+                                       type="text"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.contact.name">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label for="contactMobile1" class="control-label">
+                                    <span ng-if="lang==='AR'">رقم الجوال 1</span>
+                                    <span ng-if="lang==='EN'">Mobile 1</span>
+                                </label>
+                                <input id="contactMobile1"
+                                       type="text"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.contact.mobile1">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label for="contactMobile1" class="control-label">
+                                    <span ng-if="lang==='AR'">رقم الجوال 2</span>
+                                    <span ng-if="lang==='EN'">Mobile 2</span>
+                                </label>
+                                <input id="contactMobile2"
+                                       type="text"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.contact.mobile2">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label for="contactPhone1" class="control-label">
+                                    <span ng-if="lang==='AR'">رقم الهاتف 1</span>
+                                    <span ng-if="lang==='EN'">Phone 1</span>
+                                </label>
+                                <input id="contactPhone1"
+                                       type="text"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.contact.phone1">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label for="contactPhone2" class="control-label">
+                                    <span ng-if="lang==='AR'">رقم الهاتف 2</span>
+                                    <span ng-if="lang==='EN'">Phone 2</span>
+                                </label>
+                                <input id="contactPhone2"
+                                       type="text"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.contact.phone2">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label for="contactEmail" class="control-label">
+                                    <span ng-if="lang==='AR'">البريد الإلكتروني</span>
+                                    <span ng-if="lang==='EN'">Email</span>
+                                </label>
+                                <input id="contactEmail"
+                                       type="email"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.contact.email">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label for="contactCity" class="control-label">
+                                    <span ng-if="lang==='AR'">المدينة</span>
+                                    <span ng-if="lang==='EN'">City</span>
+                                </label>
+                                <input id="contactCity"
+                                       type="text"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.contact.city">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label for="contactPostalCode" class="control-label">
+                                    <span ng-if="lang==='AR'">الرمز البريدي</span>
+                                    <span ng-if="lang==='EN'">Postal Code</span>
+                                </label>
+                                <input id="contactPostalCode"
+                                       type="text"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.contact.postCode">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                <label for="contactCountry" class="control-label">
+                                    <span ng-if="lang==='AR'">الدولة</span>
+                                    <span ng-if="lang==='EN'">Country</span>
+                                </label>
+                                <input id="contactCountry"
+                                       type="text"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.contact.country">
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                                <label for="contactWebsite" class="control-label">
+                                    <span ng-if="lang==='AR'">الموقع الإلكتروني</span>
+                                    <span ng-if="lang==='EN'">Website</span>
+                                </label>
+                                <input id="contactWebsite"
+                                       type="text"
+                                       disable-validation-message=""
+                                       class="form-control"
+                                       ng-model="customer.contact.website">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+
+        <div class="row">
+            <button ng-if="action=='create'"
+                    uib-tooltip="{{lang==='AR' ? 'اضافة' : 'Save'}}"
+                    tooltip-append-to-body="true"
+                    type="submit"
+                    class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4">
+                <i class="material-icons">add</i>
+            </button>
+            <button ng-if="action=='update'"
+                    uib-tooltip="{{lang==='AR' ? 'تعديل' : 'Edit'}}"
+                    tooltip-append-to-body="true"
+                    type="submit"
+                    class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4">
+                <i class="material-icons">edit</i>
+            </button>
+            <button uib-tooltip="{{lang==='AR' ? 'مسح الحقول' : 'Clear'}}"
+                    tooltip-append-to-body="true"
+                    type="reset"
+                    ng-click="form.$setPristine()"
+                    class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4">
+                <i class="material-icons">delete</i>
+            </button>
+            <button uib-tooltip="{{lang==='AR' ? 'خروج' : 'Exit'}}"
+                    tooltip-append-to-body="true"
+                    type="button"
+                    ng-click="cancel()"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4">
+                <i class="material-icons">power_settings_new</i>
+            </button>
+        </div>
+
+    </div>
+
+</form>

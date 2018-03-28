@@ -1,0 +1,127 @@
+<div>
+
+    <div class="modal-header mdl-color--primary mdl-navigation__link-active">
+        <a ng-class="{'pull-left' : lang==='AR', 'pull-right' : lang==='EN'}" href="" ng-click="cancel()">
+            <span class="fa fa-close fa-2x mdl-color-text--white"></span>
+        </a>
+        <h3 ng-class="{'pull-right' : lang==='AR', 'pull-left' : lang==='EN'}" class="panel-title mdl-list__item mdl-color-text--white">
+            <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon mdl-color-text--white">{{action==='create' ? 'add' : 'edit'}}</i>
+                <strong ng-if="lang==='AR'">تفاصيل المورد رقم / </strong>
+                <strong ng-if="lang==='EN'">Supplier Details Code / </strong>
+                {{supplier.code}}
+            </span>
+        </h3>
+    </div>
+
+    <div class="modal-body" id="modal-body">
+
+        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+
+            <div class="mdl-tabs__tab-bar">
+
+                <a href="#panel-1-{{$index}}" class="mdl-tabs__tab is-active col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <span ng-if="lang==='AR'">التفاصيل</span>
+                    <span ng-if="lang==='EN'">Details</span>
+                </a>
+
+            </div>
+
+            <div class="mdl-tabs__panel is-active" id="panel-1-{{$index}}">
+
+                <div class="form-group row">
+                    <button uib-tooltip="{{lang==='AR' ? 'تحديث' : 'Refresh'}}"
+                            tooltip-append-to-body="true"
+                            type="button"
+                            ng-click="refreshSupplier()"
+                            class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                        <i class="material-icons">cached</i>
+                    </button>
+                    <button uib-tooltip="{{lang==='AR' ? 'تعديل البيانات' : 'Edit Information'}}"
+                            tooltip-append-to-body="true"
+                            type="button"
+                            ng-if="contains(me.team.authorities, ['ROLE_SUPPLIER_UPDATE'])"
+                            ng-click="ModalProvider.openSupplierUpdateModel(supplier)"
+                            class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                        <i class="material-icons">edit</i>
+                    </button>
+                </div>
+
+                <div class="form-group row">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <span ng-if="lang==='AR'">اسم المورد</span>
+                                    <span ng-if="lang==='EN'">Name</span>
+                                </td>
+                                <td>{{supplier.contact.name}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span ng-if="lang==='AR'">تاريخ التسجيل</span>
+                                    <span ng-if="lang==='EN'">Register Date</span>
+                                </td>
+                                <td>
+                                    <span ng-show="dateType==='H'">{{supplier.contact.registerDate | kdate: 'yyyy-mm-dd' : 'ar' : 'ummalqura'}}</span>
+                                    <span ng-show="dateType==='G'">{{supplier.contact.registerDate | date: 'yyyy-MM-dd'}}</span>
+                                    {{supplier.contact.registerDate | date:'h:m a'}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span ng-if="lang==='AR'">الجوال 1</span>
+                                    <span ng-if="lang==='EN'">Mobile 1</span>
+                                </td>
+                                <td>{{supplier.contact.mobile1}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span ng-if="lang==='AR'">الجوال 2</span>
+                                    <span ng-if="lang==='EN'">Mobile 2</span>
+                                </td>
+                                <td>{{supplier.contact.mobile2}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span ng-if="lang==='AR'">رقم الهوية</span>
+                                    <span ng-if="lang==='EN'">Identity Card Number</span>
+                                </td>
+                                <td>{{supplier.contact.identityNumber}}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span ng-if="lang==='AR'">الجنسية</span>
+                                    <span ng-if="lang==='EN'">Nationality</span>
+                                </td>
+                                <td>{{supplier.contact.nationality}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+
+        <div class="row">
+            <button uib-tooltip="{{lang==='AR' ? 'خروج' : 'Exit'}}"
+                    tooltip-append-to-body="true"
+                    type="button"
+                    ng-click="cancel()"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect pull-left">
+                <i class="material-icons">power_settings_new</i>
+            </button>
+        </div>
+
+    </div>
+
+</div>

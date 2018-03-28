@@ -1,0 +1,127 @@
+<form name="form" ng-submit="submit()" novalidate="novalidate" focus-group="" focus-stack=""
+      focus-group-head="loop" focus-group-tail="loop">
+
+    <div class="modal-header mdl-color--primary mdl-navigation__link-active">
+        <a ng-class="{'pull-left' : lang==='AR', 'pull-right' : lang==='EN'}" href="" ng-click="cancel()">
+            <span class="fa fa-close fa-2x mdl-color-text--white"></span>
+        </a>
+        <h3 ng-class="{'pull-right' : lang==='AR', 'pull-left' : lang==='EN'}" class="panel-title mdl-list__item mdl-color-text--white">
+            <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon mdl-color-text--white">{{action==='create' ? 'add' : 'edit'}}</i>
+                <strong>{{title}}</strong>
+            </span>
+        </h3>
+    </div>
+
+    <div class="modal-body" id="modal-body">
+
+        <div class="row">
+
+            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="form.$invalid && form.$submitted">
+                <div class="alert alert-danger" role="alert">
+                    <strong ng-if="lang==='AR'">فضلاً اكمل الحقول المطلوبة</strong>
+                    <strong ng-if="lang==='EN'">Please Complete Required Fields</strong>
+                </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <label for="nameArabic" class="control-label">
+                    <span ng-if="lang==='AR'">الاسم عربي</span>
+                    <span ng-if="lang==='EN'">Arabic Name</span>
+                </label>
+                <input id="nameArabic"
+                       type="text"
+                       focus-autofocus="1"
+                       required="required"
+                       disable-validation-message=""
+                       class="form-control"
+                       ng-class="{'arabic-control' : lang==='AR', 'english-control' : lang==='EN'}"
+                       placeholder="{{lang==='AR' ? 'اذكر الاسم العربي...' : 'Type Arabic Name'}}"
+                       ng-model="productCategory.nameArabic">
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <label for="nameEnglish" class="control-label">
+                    <span ng-if="lang==='AR'">الاسم إنجليزي</span>
+                    <span ng-if="lang==='EN'">English Name</span>
+                </label>
+                <input id="nameEnglish"
+                       type="text"
+                       required="required"
+                       disable-validation-message=""
+                       class="form-control"
+                       ng-class="{'arabic-control' : lang==='AR', 'english-control' : lang==='EN'}"
+                       placeholder="{{lang==='AR' ? 'اذكر الاسم الانجليزي...' : 'Type English Name'}}"
+                       ng-model="productCategory.nameEnglish">
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <label for="descriptionArabic" class="control-label">
+                    <span ng-if="lang==='AR'">ملاحظات - عربي</span>
+                    <span ng-if="lang==='EN'">Arabic Notes</span>
+                </label>
+                <input id="descriptionArabic"
+                       type="text"
+                       required="required"
+                       disable-validation-message=""
+                       class="form-control"
+                       ng-class="{'arabic-control' : lang==='AR', 'english-control' : lang==='EN'}"
+                       placeholder="{{lang==='AR' ? 'اذكر الملاحظات العربي...' : 'Type Arabic Note'}}"
+                       ng-model="productCategory.descriptionArabic">
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <label for="descriptionEnglish" class="control-label">
+                    <span ng-if="lang==='AR'">ملاحظات - إنجليزي</span>
+                    <span ng-if="lang==='EN'">English Notes</span>
+                </label>
+                <input id="descriptionEnglish"
+                       type="text"
+                       required="required"
+                       disable-validation-message=""
+                       class="form-control english-control"
+                       ng-class="{'arabic-control' : lang==='AR', 'english-control' : lang==='EN'}"
+                       placeholder="{{lang==='AR' ? 'اذكر الملاحظات الانجليزي...' : 'Type English Note'}}"
+                       ng-model="productCategory.descriptionEnglish">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+
+        <div class="row">
+            <button ng-if="action=='create'"
+                    uib-tooltip="{{lang==='AR' ? 'اضافة' : 'Save'}}"
+                    tooltip-append-to-body="true"
+                    type="submit"
+                    class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4">
+                <i class="material-icons">add</i>
+            </button>
+            <button ng-if="action=='update'"
+                    uib-tooltip="{{lang==='AR' ? 'تعديل' : 'Edit'}}"
+                    tooltip-append-to-body="true"
+                    type="submit"
+                    class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4">
+                <i class="material-icons">edit</i>
+            </button>
+            <button uib-tooltip="{{lang==='AR' ? 'مسح الحقول' : 'Clear'}}"
+                    tooltip-append-to-body="true"
+                    type="reset"
+                    ng-click="productCategory={};form.$setPristine()"
+                    class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4">
+                <i class="material-icons">delete</i>
+            </button>
+            <button uib-tooltip="{{lang==='AR' ? 'خروج' : 'Exit'}}"
+                    tooltip-append-to-body="true"
+                    type="button"
+                    ng-click="cancel()"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4">
+                <i class="material-icons">power_settings_new</i>
+            </button>
+        </div>
+
+    </div>
+
+</form>
