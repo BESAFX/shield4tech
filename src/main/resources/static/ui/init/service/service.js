@@ -14,7 +14,6 @@ app.service('ModalProvider', ['$uibModal', '$log', '$rootScope', function ($uibM
             controller: 'customerCreateUpdateCtrl',
             backdrop: 'static',
             keyboard: false,
-            size: 'lg',
             resolve: {
                 title: function () {
                     return $rootScope.lang === 'AR' ? 'انشاء حساب عميل جديد' : 'New Customer';
@@ -38,7 +37,6 @@ app.service('ModalProvider', ['$uibModal', '$log', '$rootScope', function ($uibM
             controller: 'customerCreateUpdateCtrl',
             backdrop: 'static',
             keyboard: false,
-            size: 'lg',
             resolve: {
                 title: function () {
                     return $rootScope.lang === 'AR' ? 'تعديل حساب عميل' : 'Update Customer Information';
@@ -85,7 +83,6 @@ app.service('ModalProvider', ['$uibModal', '$log', '$rootScope', function ($uibM
             controller: 'supplierCreateUpdateCtrl',
             backdrop: 'static',
             keyboard: false,
-            size: 'lg',
             resolve: {
                 title: function () {
                     return $rootScope.lang === 'AR' ? 'انشاء حساب مورد جديد' : 'New Supplier';
@@ -109,7 +106,6 @@ app.service('ModalProvider', ['$uibModal', '$log', '$rootScope', function ($uibM
             controller: 'supplierCreateUpdateCtrl',
             backdrop: 'static',
             keyboard: false,
-            size: 'lg',
             resolve: {
                 title: function () {
                     return $rootScope.lang === 'AR' ? 'تعديل حساب مورد' : 'Update Supplier Information';

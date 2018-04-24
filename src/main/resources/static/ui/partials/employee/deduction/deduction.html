@@ -11,14 +11,14 @@
                            ng-click="employeeCtrl.fetchDeductionData()"
                            tooltip-append-to-body="true"
                            uib-tooltip="{{lang==='AR' ? 'تحديث البيانات' : 'Refresh'}}">
-                            <span class="fa fa-refresh"></span>
+                            <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/refresh.png" width="24" height="24">
                         </a>
                         <a href=""
                            ng-if="contains(me.team.authorities, ['ROLE_DEDUCTION_CREATE'])"
                            ng-click="employeeCtrl.newDeduction()"
                            tooltip-append-to-body="true"
                            uib-tooltip="{{lang==='AR' ? 'انشاء استقطاع' : 'New Deduction...'}}">
-                            <span class="fa fa-plus-square"></span>
+                            <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                         </a>
                     </li>
                 </ul>

@@ -113,7 +113,7 @@
                        ng-click="newOrder()"
                        tooltip-append-to-body="true"
                        uib-tooltip="{{lang==='AR' ? 'انشاء طلب فحص' : 'New Order...'}}">
-                        <span class="fa fa-plus-square"></span>
+                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                     </a>
                 </li>
             </ul>
@@ -132,7 +132,7 @@
                         ng-if="contains(me.team.authorities, ['ROLE_ORDER_CREATE'])"
                         ng-click="newOrder()"
                         class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                    <i class="material-icons">add</i>
+                    <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                 </button>
 
                 <button uib-tooltip="{{lang==='AR' ? 'تقرير مختصر بطلبات القائمة' : 'Orders Summary Report'}}"
@@ -342,7 +342,7 @@
                        ng-click="newOrder()"
                        tooltip-append-to-body="true"
                        uib-tooltip="{{lang==='AR' ? 'انشاء طلب فحص' : 'New Order...'}}">
-                        <span class="fa fa-plus-square"></span>
+                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                     </a>
                 </li>
             </ul>
@@ -399,7 +399,7 @@
                                             ng-if="contains(me.team.authorities, ['ROLE_ORDER_CREATE'])"
                                             ng-click="newOrder();"
                                             class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                        <i class="material-icons">add</i>
+                                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                                     </button>
                                     <button uib-tooltip="{{lang==='AR' ? 'حذف' : 'Delete'}}"
                                             tooltip-append-to-body="true"
@@ -407,7 +407,7 @@
                                             ng-if="contains(me.team.authorities, ['ROLE_ORDER_DELETE'])"
                                             ng-click="deleteOrder(order)"
                                             class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                        <i class="material-icons">delete</i>
+                                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/delete.png" width="24" height="24">
                                     </button>
                                 </div>
                             </div>

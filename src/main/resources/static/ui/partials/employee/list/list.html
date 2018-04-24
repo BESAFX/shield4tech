@@ -11,14 +11,14 @@
                            ng-click="employeeCtrl.fetchTableData()"
                            tooltip-append-to-body="true"
                            uib-tooltip="{{lang==='AR' ? 'تحديث البيانات' : 'Refresh'}}">
-                            <span class="fa fa-refresh"></span>
+                            <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/refresh.png" width="24" height="24">
                         </a>
                         <a href=""
                            ng-if="contains(me.team.authorities, ['ROLE_EMPLOYEE_CREATE'])"
                            ng-click="employeeCtrl.newEmployee()"
                            tooltip-append-to-body="true"
                            uib-tooltip="{{lang==='AR' ? 'انشاء حساب موظف' : 'New Employee...'}}">
-                            <span class="fa fa-plus-square"></span>
+                            <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                         </a>
                     </li>
                 </ul>
@@ -183,7 +183,7 @@
                                     ng-if="contains(me.team.authorities, ['ROLE_EMPLOYEE_CREATE'])"
                                     ng-click="employeeCtrl.newEmployee()"
                                     class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                <i class="material-icons">add</i>
+                                <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                             </button>
                             <button uib-tooltip="{{lang==='AR' ? 'تعديل' : 'Edit...'}}"
                                     tooltip-append-to-body="true"
@@ -191,7 +191,7 @@
                                     ng-if="contains(me.team.authorities, ['ROLE_EMPLOYEE_UPDATE'])"
                                     ng-click="ModalProvider.openEmployeeUpdateModel(employee)"
                                     class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                <i class="material-icons">edit</i>
+                                <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/edit.png" width="24" height="24">
                             </button>
                             <button uib-tooltip="{{lang==='AR' ? 'حذف' : 'Delete'}}"
                                     tooltip-append-to-body="true"
@@ -199,7 +199,7 @@
                                     ng-if="contains(me.team.authorities, ['ROLE_EMPLOYEE_DELETE'])"
                                     ng-click="employeeCtrl.delete(employee)"
                                     class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                <i class="material-icons">delete</i>
+                                <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/delete.png" width="24" height="24">
                             </button>
                         </div>
                     </div>

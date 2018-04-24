@@ -46,6 +46,12 @@ app.run([
             $window.location.href = '/logout';
         };
 
+        $rootScope.refreshGUI = function () {
+            $timeout(function () {
+                window.componentHandler.upgradeAllRegistered();
+            }, 800);
+        };
+
         $rootScope.dateType = 'H';
 
         $rootScope.lang = 'AR';
@@ -84,9 +90,7 @@ app.run([
                     $css.add('/ui/css/style-en.css');
                     break;
             }
-            $timeout(function () {
-                window.componentHandler.upgradeAllRegistered();
-            }, 1500);
+            $rootScope.refreshGUI();
         };
 
         $rootScope.style = 'mdl-style';

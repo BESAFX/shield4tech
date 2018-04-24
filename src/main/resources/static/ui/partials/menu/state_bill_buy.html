@@ -14,7 +14,7 @@
                 <li class="mdl-menu__item mdl-list__item mdl-menu__item--full-bleed-divider"
                     ng-click="findAllBillBuy()">
                     <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-icon">visibility</i>
+                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/refresh.png" width="24" height="24">
                         <span ng-if="lang==='AR'">عرض كل الفواتير</span>
                         <span ng-if="lang==='EN'">Read All Bills</span>
                     </span>
@@ -72,7 +72,7 @@
                 <li class="mdl-menu__item mdl-list__item" ng-click="newBillBuy();"
                     ng-if="contains(me.team.authorities, ['ROLE_BILL_BUY_CREATE'])">
                     <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-icon">add</i>
+                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                         <span ng-if="lang==='AR'">انشاء فاتورة شراء جديدة</span>
                         <span ng-if="lang==='EN'">New...</span>
                     </span>
@@ -119,14 +119,14 @@
                        ng-click="filterBillBuy()"
                        tooltip-append-to-body="true"
                        uib-tooltip="{{lang==='AR' ? 'تحديث البيانات' : 'Refresh'}}">
-                        <span class="fa fa-refresh"></span>
+                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/refresh.png" width="24" height="24">
                     </a>
                     <a href=""
                        ng-if="contains(me.team.authorities, ['ROLE_BILL_BUY_CREATE'])"
                        ng-click="newBillBuy()"
                        tooltip-append-to-body="true"
                        uib-tooltip="{{lang==='AR' ? 'انشاء فاتورة شراء' : 'New Bill...'}}">
-                        <span class="fa fa-plus-square"></span>
+                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                     </a>
                 </li>
             </ul>
@@ -344,7 +344,7 @@
                                 ng-if="contains(me.team.authorities, ['ROLE_BILL_BUY_CREATE'])"
                                 ng-click="newBillBuy();"
                                 class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                            <i class="material-icons">add</i>
+                            <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                         </button>
                         <button uib-tooltip="{{lang==='AR' ? 'حذف' : 'Delete'}}"
                                 tooltip-append-to-body="true"
@@ -352,7 +352,7 @@
                                 ng-if="contains(me.team.authorities, ['ROLE_BILL_BUY_DELETE'])"
                                 ng-click="deleteBillBuy(billBuy)"
                                 class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                            <i class="material-icons">delete</i>
+                            <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/delete.png" width="24" height="24">
                         </button>
                     </div>
                 </div>

@@ -16,7 +16,7 @@
                 <li class="mdl-menu__item mdl-list__item"
                     ng-click="findAllCustomers()">
                     <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-icon">visibility</i>
+                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/refresh.png" width="24" height="24">
                         <span ng-if="lang==='AR'">عرض كل العملاء</span>
                         <span ng-if="lang==='EN'">Read All Customers</span>
                     </span>
@@ -36,7 +36,7 @@
                 <li class="mdl-menu__item mdl-list__item" ng-click="newCustomer();"
                     ng-if="contains(me.team.authorities, ['ROLE_CUSTOMER_CREATE'])">
                     <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-icon">add</i>
+                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                         <span ng-if="lang==='AR'">انشاء عميل جديد</span>
                         <span ng-if="lang==='EN'">New...</span>
                     </span>
@@ -87,7 +87,7 @@
                        ng-click="newCustomer()"
                        tooltip-append-to-body="true"
                        uib-tooltip="{{lang==='AR' ? 'انشاء حساب عميل جديد' : 'New Customer...'}}">
-                        <span class="fa fa-plus-square"></span>
+                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                     </a>
                 </li>
             </ul>
@@ -213,7 +213,7 @@
                        ng-click="newCustomer()"
                        tooltip-append-to-body="true"
                        uib-tooltip="{{lang==='AR' ? 'انشاء حساب عميل جديد' : 'New Customer...'}}">
-                        <span class="fa fa-plus-square"></span>
+                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                     </a>
                 </li>
             </ul>
@@ -276,7 +276,7 @@
                                             ng-if="contains(me.team.authorities, ['ROLE_CUSTOMER_CREATE'])"
                                             ng-click="newCustomer();"
                                             class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                        <i class="material-icons">add</i>
+                                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                                     </button>
                                     <button uib-tooltip="{{lang==='AR' ? 'تعديل' : 'Edit...'}}"
                                             tooltip-append-to-body="true"
@@ -284,7 +284,7 @@
                                             ng-if="contains(me.team.authorities, ['ROLE_CUSTOMER_UPDATE'])"
                                             ng-click="ModalProvider.openCustomerUpdateModel(customer)"
                                             class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                        <i class="material-icons">edit</i>
+                                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/edit.png" width="24" height="24">
                                     </button>
                                     <button uib-tooltip="{{lang==='AR' ? 'حذف' : 'Delete'}}"
                                             tooltip-append-to-body="true"
@@ -292,7 +292,7 @@
                                             ng-if="contains(me.team.authorities, ['ROLE_CUSTOMER_DELETE'])"
                                             ng-click="deleteCustomer(customer)"
                                             class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                        <i class="material-icons">delete</i>
+                                        <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/delete.png" width="24" height="24">
                                     </button>
                                 </div>
                             </div>

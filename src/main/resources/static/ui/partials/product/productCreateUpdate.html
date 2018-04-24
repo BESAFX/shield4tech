@@ -101,21 +101,21 @@
                     tooltip-append-to-body="true"
                     type="submit"
                     class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4">
-                <i class="material-icons">add</i>
+                <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
             </button>
             <button ng-if="action=='update'"
                     uib-tooltip="{{lang==='AR' ? 'تعديل' : 'Edit'}}"
                     tooltip-append-to-body="true"
                     type="submit"
                     class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4">
-                <i class="material-icons">edit</i>
+                <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/edit.png" width="24" height="24">
             </button>
             <button uib-tooltip="{{lang==='AR' ? 'مسح الحقول' : 'Clear'}}"
                     tooltip-append-to-body="true"
                     type="reset"
                     ng-click="form.$setPristine()"
                     class="mdl-button mdl-js-button mdl-js-ripple-effect col-xs-4 col-sm-4 col-md-4">
-                <i class="material-icons">delete</i>
+                <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/delete.png" width="24" height="24">
             </button>
             <button uib-tooltip="{{lang==='AR' ? 'خروج' : 'Exit'}}"
                     tooltip-append-to-body="true"

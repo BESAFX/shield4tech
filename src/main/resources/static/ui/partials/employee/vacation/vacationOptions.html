@@ -11,7 +11,7 @@
         <li class="mdl-menu__item mdl-list__item mdl-menu__item--full-bleed-divider"
             ng-click="employeeCtrl.fetchVacationData()">
             <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">visibility</i>
+                <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/refresh.png" width="24" height="24">
                 <span ng-if="lang==='AR'">عرض البيانات</span>
                 <span ng-if="lang==='EN'">View</span>
             </span>
@@ -19,7 +19,7 @@
         <li class="mdl-menu__item mdl-list__item" ng-click="employeeCtrl.newVacation();"
             ng-if="contains(me.team.authorities, ['ROLE_VACATION_CREATE'])">
             <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon">add</i>
+                <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                 <span ng-if="lang==='AR'">انشاء اجازة جديد</span>
                 <span ng-if="lang==='EN'">New...</span>
             </span>

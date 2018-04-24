@@ -11,14 +11,14 @@
                            ng-click="employeeCtrl.fetchVacationTypeData()"
                            tooltip-append-to-body="true"
                            uib-tooltip="{{lang==='AR' ? 'تحديث البيانات' : 'Refresh'}}">
-                            <span class="fa fa-refresh"></span>
+                            <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/refresh.png" width="24" height="24">
                         </a>
                         <a href=""
                            ng-if="contains(me.team.authorities, ['ROLE_VACATION_TYPE_CREATE'])"
                            ng-click="employeeCtrl.newVacationType()"
                            tooltip-append-to-body="true"
                            uib-tooltip="{{lang==='AR' ? 'انشاء بند جديد' : 'New VacationType...'}}">
-                            <span class="fa fa-plus-square"></span>
+                            <img class="material-icons mdl-list__item-icon" ng-src="/ui/img/add.png" width="24" height="24">
                         </a>
                     </li>
                 </ul>
